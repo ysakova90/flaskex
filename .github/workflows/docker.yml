@@ -16,7 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - run: docker version
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+    
 
 
     
